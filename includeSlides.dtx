@@ -1,0 +1,214 @@
+% \iffalse meta-comment
+% 
+% includeSlides.ins
+% 
+% Copyright (C) 2018 by Thai Son Hoang
+% <T dot S dot Hoang at ecs dot soton dot ac dot uk>
+% --------------------------------------------------------------------
+% 
+% This file may be distributed and/or modified under the conditions of
+% the LaTeX Project Public License, either version 1.3c of this license
+% or (at your option) any later version. The latest version of this
+% license is in:
+%
+%    http://www.latex-project.org/lppl.txt
+%
+% and version 1.3c or later is part of all distributions of LaTeX 
+% version 2008/05/04 or later.
+% 
+% This work has the LPPL maintenance status "author-maintained".
+% 
+% The Current Maintainer of this work is T.S. Hoang
+%
+% This work consists of the files includeSlides.dtx,
+% includeSlides.ins, the derived file includeSlides.sty, the generated
+% documentation includeSlides.pdf, and some sample documents.
+% 
+% \fi
+% 
+% \iffalse
+%<includeSlides>\NeedsTeXFormat{LaTeX2e}\relax
+%<includeSlides>\ProvidesPackage{includeSlides}
+%<includeSlides>    [2018/02/17 v0.1 Package for including slides from external PDFs]
+%
+%<*driver> 
+\documentclass[a4paper]{ltxdoc}
+
+% Package for typesetting kahoot symbols using UoS' colours
+\usepackage{includeSlides}
+
+\EnableCrossrefs
+% ^^A\CodelineIndex
+\PageIndex
+\RecordChanges
+
+\begin{document}
+\DocInput{includeSlides.dtx}
+\end{document}
+%</driver>
+% \fi
+% 
+% \CheckSum{0}
+% 
+% \CharacterTable
+% {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+% Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+% Digits        \0\1\2\3\4\5\6\7\8\9
+% Exclamation   \!     Double quote  \"     Hash (number) \#
+% Dollar        \$     Percent       \%     Ampersand     \&
+% Acute accent  \'     Left paren    \(     Right paren   \)
+% Asterisk      \*     Plus          \+     Comma         \,
+% Minus         \-     Point         \.     Solidus       \/
+% Colon         \:     Semicolon     \;     Less than     \<
+% Equals        \=     Greater than  \>     Question mark \?
+% Commercial at \@     Left bracket  \[     Backslash     \\
+% Right bracket \]     Circumflex    \^     Underscore    \_
+% Grave accent  \`     Left brace    \{     Vertical bar  \|
+% Right brace   \}     Tilde         \~}
+% 
+% \changes{v0.1}{2018/02/17}{Initial version}
+% 
+% \GetFileInfo{includeSlides.sty}
+% 
+% \DoNotIndex{\\}
+% \DoNotIndex{\DeclareOption}
+% \DoNotIndex{\ProcessOptions}
+% \DoNotIndex{\RequirePackage}
+% \DoNotIndex{\arabic}
+% \DoNotIndex{\begin}
+% \DoNotIndex{\csname,\csuse}
+% \DoNotIndex{\def,\do,\dolistloop}
+% \DoNotIndex{\end,\endcsname,\expandafter}
+% \DoNotIndex{\hline}
+% \DoNotIndex{\ifstrequal,\iftoggle,\item}
+% \DoNotIndex{\label,\labelformat,\listadd}
+% \DoNotIndex{\medskip}
+% \DoNotIndex{\newcommand,\newcounter,\newenvironment,\newtoggle,\nomenclature}
+% \DoNotIndex{\quad}
+% \DoNotIndex{\renewcommand,\renewenvironment,\ref,\refstepcounter}
+% \DoNotIndex{\setcounter,\small}
+% \DoNotIndex{\textsf,\textwidth,\togglefalse,\toggletrue}
+% \DoNotIndex{\value}
+% \DoNotIndex{\xspace}
+% \DoNotIndex{\colorlet,\definecolor}
+% \DoNotIndex{\hypersetup}
+%
+% \title{The \textsf{includeSlides} package\thanks{This document
+% corresponds to \textsf{includeSlides}~\fileversion, dated~\filedate.}}
+% \author{%
+% Thai Son Hoang \\
+% ECS, University of Southampton \\
+% \texttt{<T dot S dot Hoang at ecs dot soton dot ac dot uk>}
+% }
+% \date{January 14, 2018}
+% 
+% \maketitle
+% 
+% ^^A %%%%% Abstract %%%%%
+% \begin{abstract}
+%   This package eases the inclusion of slides from external PDFs into
+%   LaTeX beamer presentations.
+% \end{abstract}
+% 
+% ^^A %%%%% Table of contents %%%%%
+% \tableofcontents
+% 
+% ^^A %%%%% Introduction %%%%%
+% \section{Introduction}
+% \label{sec:introduction}
+% 
+% This package was developed in order to ease the inclusion of slides
+% from external PDFs into LaTeX beamer presentations.
+% 
+% ^^A %%%%% Usage %%%%%%
+% \section{Usage}
+% See the accompanying sample document for usage of the package.
+%
+% \StopEventually{
+% \PrintChanges
+% \PrintIndex
+% }
+%   
+% ^^A %%%%% Implementation %%%%%
+% \section{Implementation}
+%
+% \subsection{Package Loading}
+% \label{sec:package-loading}
+% Our implementation is based on the |pdfpages| for insertion external
+% multi-page PDFs.
+% 
+% \iffalse ^^A BEGIN Produce comments only in the resulting style file
+%<includeSlides>
+%<includeSlides>%%%%% BEGIN Package loading %%%%%
+%<includeSlides>% ============================= %
+% \fi ^^A END Produce comments only in the resulting style file
+%
+%    \begin{macrocode}
+% Package insertion of external multi-page PDFs.
+\RequirePackage{pdfpages}
+%    \end{macrocode}
+%
+% \iffalse ^^A BEGIN Produce comments only in the resulting style file
+%<includeSlides>% =========================== %
+%<includeSlides>%%%%% END Package loading %%%%%
+%<includeSlides>
+% \fi ^^A END Produce comments only in the resulting style file
+%
+% \iffalse ^^A BEGIN Produce comments only in the resulting style file
+%<includeSlides>
+%<includeSlides>%%%%% BEGIN Commands for slides inclusion %%%%%
+%<includeSlides>% =========================================== %
+% \fi ^^A END Produce comments only in the resulting style file
+%
+% \begin{macro}{\includeSlides@File}
+%   We define the macro included file, this can be set anytime
+%   using |setIncludedFile| command (defined later).
+%    \begin{macrocode}
+\newcommand{\includeSlides@File}{example.pdf}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\setIncludedFile}
+%   This command set the included file, anytime in the presentation.
+%    \begin{macrocode}
+
+\newcommand{\setIncludedFile}[1]{%
+  \renewcommand{\includeSlides@File}{#1}%
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\includeSlidesFromFile}
+%   This is the first command to include slides from a PDF file.
+%    \begin{macrocode}
+
+\newcommand{\includeSlidesFromFile}[3][]{%
+  \begingroup
+  \setbeamertemplate{background canvas}[default]%
+  \setbeamertemplate{background color}[bg=]%
+  \includepdf[pages={#2}]{#3}%
+  \note{#1}%
+  \endgroup
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{includeSlides}
+%   This command include the slides from the included file.  This is
+%   implemented using the |\includeSlidesFromFile| command.
+% \end{macro}
+%    \begin{macrocode}
+
+\newcommand{\includeSlides}[2][]{
+  \includeSlidesFromFile[#1]{#2}{\includeSlides@File}
+}
+
+%    \end{macrocode}
+% \iffalse ^^A BEGIN Produce comments only in the resulting style file
+%<includeSlides>
+%<includeSlides>% ========================================= %
+%<includeSlides>%%%%% END Commands for slides inclusion %%%%%
+% \fi ^^A END Produce comments only in the resulting style file
+%
+% \Finale
+\endinput
