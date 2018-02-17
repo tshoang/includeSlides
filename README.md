@@ -9,9 +9,10 @@ The package is already pre-compiled. However, in the case where it is
 needed for recompiling, a gradle build script has been provided. The
 users can simply issue the following command:
 
-  ./gradlew (on *nix systems)
+    ./gradlew (on *nix systems)
 or
-  gradlew.bat (on Windows systems)
+
+	gradlew.bat (on Windows systems)
 
 This will perform the following:
 
